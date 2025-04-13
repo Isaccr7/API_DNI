@@ -19,20 +19,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 section {
   width: 100%;
   max-width: 800px;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 32px;
   color: #222b3a;
   margin-bottom: 30px;
   font-weight: 700;
@@ -42,15 +43,14 @@ h1 {
   margin-bottom: 30px;
 }
 
-.dni {
+.input input {
   width: 100%;
   padding: 15px;
-  margin-bottom: 20px;
   border-radius: 8px;
-  border: 2px solid #00bb92;
+  border: 2px solid var(--color);
   font-size: 18px;
-  text-align: center;
   background-color: #f9f9f9;
+  text-align: center;
   color: #333;
 }
 
@@ -58,13 +58,14 @@ h1 {
   width: 100%;
   padding: 15px;
   border-radius: 8px;
-  background: #00bb92;
+  background: var(--color);
   color: white;
   font-size: 20px;
   font-weight: bold;
   border: none;
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-top: 10px;
 }
 
 .button button:hover {
@@ -78,22 +79,13 @@ h1 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.resultado h2 {
-  color: #001a29;
-  font-size: 18px;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-/* .resultado .dni,
-.resultado .nombre,
-.resultado .apellido,
-.resultado .cui {
+.campo {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-} */
+  gap: 10px;
+}
 
 .label {
   width: 25%;
@@ -101,17 +93,15 @@ h1 {
 }
 
 .res input {
-  width: 70%;
+  width: 100%;
   padding: 10px;
   background: #f1f1f1;
   border-radius: 8px;
   border: 2px solid #ddd;
   font-size: 16px;
   color: #333;
-
-  /* Allow text to wrap and overflow if needed */
-  white-space: normal;
-  overflow: auto;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -119,4 +109,21 @@ h1 {
   color: red;
   font-weight: bold;
   margin-top: 20px;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .campo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .label,
+  .res {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
 }
