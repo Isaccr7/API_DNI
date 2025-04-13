@@ -24,7 +24,7 @@ function traerdatos() {
                 document.getElementById("doc").value = datos.data.numero;
                 document.getElementById("nombre").value = datos.data.nombres;
                 document.getElementById("apellido").value = datos.data.apellido_paterno + " " + datos.data.apellido_materno;
-                document.getElementById("cui").value = datos.data.cui;
+                // document.getElementById("cui").value = datos.data.cui;
                 document.getElementById("error").innerText = "";
             } else {
                 throw new Error('No se encontraron datos para el DNI ingresado');
